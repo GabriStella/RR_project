@@ -10,7 +10,7 @@ fontsize:  9 pt
 ---
 
 
-```{r}
+```{r. echo=F}
 load('Data/Environment.Rdata')
 ```
 
