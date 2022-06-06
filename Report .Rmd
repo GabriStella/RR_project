@@ -23,6 +23,7 @@ The theory greatly simplifies the low-skilled labor market, generally assuming t
 
 We suppose that reproducing results obtained by other researchers is a crucial part of science, therefore, the main idea of our paper is taken in two parts. First, we aim to reproduce the results of a well-known meta-analysis conducted in the late 1990s by @card1995time. In their paper, the authors looked at 15 studies on the topic and reached multiple conclusions taking into account the quality of the studies cited. Obtained and aggregated results, such as coefficients and t-value which are not the main factor when it comes to meta-studies.
 
+
 # *Card and Krueger*'s Meta-Analysis 
 
 A Meta-Analysis, is directed to use the main results about the same argument and verify is the conclusion works also in aggregate, in this type of research, authors typically look for various biases that can lead to erroneous conclusions that are later replicated by other scientists.
@@ -57,15 +58,16 @@ Besides, the authors estimate the similarity models of three research subsets. I
 Having replicated the results obtained by Card and Krueger, we aimed to further strengthen the analysis by adding additional papers, paying particular attention to these papers, which were published later than previous meta-analyses. 
 
 <p align="center">
-Our implementation are about three studies: 
+**Our implementation are about three studies:**
 </p>
 
-* The Impact of the National Minimum Wage on Employment (2011)
-    * *Jinlan Ni* , *Guangxin Wang* and *Xianguo Yao*
-* The impact of minimum wage on employment in Poland (2012)
-    *	*Aleksandra Majchrowska* and *Zbigniew Żółkiewski*
-* Impact of Minimum Wages on Employment (2015)
-    * *Eewley et al.* 
+* Impact of Minimum Wages on Employment
+    * *@JN*
+* The impact of minimum wage on employment in Poland
+    * *@Majchrowska*
+* Impact of Minimum Wages on Employment
+    * *@bewley* 
+
     
 The next section describes the process of reproducing the meta-analysis done by Card and Krueger. Later, we then conduct the analysis with three other papers and indicating our obtained results.
   
@@ -80,12 +82,18 @@ kable(head(dt, 15), booktabs = TRUE) %>%
 
 ```
 
+The studies used by *Card and Krueger* are: 
+
+- *@kaitz1970experience*; - *@mincer1976unemployment*; - *@gramlich1976impact*; - *@welch1976*; - *@ragan19*; - *@wachter1979*; - *@iden1980labor*; - *@ragan1981effect*; - *@abowd1981structural*; - *@betsey1981federal*; - *@brown1983effect*; - *@hamermesh1981*; - *@solon1985minimum*; - *@wellington1991effects*; - *@klerman1992employment*.
+
+
 In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
 Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
 
 ### Our implementation. {.active}
 
 ```{r, echo = F}
+
 kable(head(dt [16:18, 1:14],), booktabs = TRUE) %>%
   kable_styling(font_size = 11)
 
