@@ -11,7 +11,7 @@ date:      June, 2022
 ---
 
 ```{r, echo = F}
-load('Data/Environment_HTML.Rdata')
+load('Data/Environment.Rdata')
 library(kableExtra)
 ```
 
@@ -60,9 +60,10 @@ kable(head(dt, 15), booktabs = TRUE) %>%
 In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
 Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
 
-### Our implementation.  {.active}
+### Our implementation. {.active}
+
 ```{r, echo = F}
-kable(head(dt [16:18, 1:14]), booktabs = TRUE) %>%
+kable(head(dt [16:18, 1:14],), booktabs = TRUE) %>%
   kable_styling(font_size = 11)
 
 ```
@@ -80,12 +81,11 @@ kable(head(dt, 18), booktabs = TRUE) %>%
   kable_styling(font_size = 11)
 
 ```
-{---}
-
 
 
 In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
 Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
+
 
 
 ## variable

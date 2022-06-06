@@ -64,7 +64,7 @@ dt$sqrt_df = sqrt(dt$df)
 dt$l_sqrt_df = log(dt$sqrt_df)
 
 
-save(dt, file = "DataFrame.RData")
+save(dt, file = "Data/DataFrame.RData")
 
 #now we're going to reproduce the old model predict in the paper and then we'll calculate the implemented ones.
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
