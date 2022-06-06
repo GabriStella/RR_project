@@ -10,7 +10,7 @@ fontsize:  9 pt
 ---
 
 
-```{r. echo=F}
+```{r, echo=F}
 load('Data/Environment.Rdata')
 ```
 
@@ -67,20 +67,21 @@ load('Data/Environment.Rdata')
     
 - Below we will conduct two regression models which present by graph and table, first we'll use just the previous fifteen studies to reproduce the Card and Krueger's M-A, then we'll implement with our data and we'll see if the study keeps its validity
 
-
 ## Data (3/3)
 
 ### **t_stat**
+
 ```{r, echo=FALSE}
-#kable(cbind(dt, dt, dt), booktabs = T) %>%
-#  kable_styling(latex_options = c("striped", "scale_down"))
 summary(dt$t_stat)
 ```
 ### **coef**
+
 ```{r, echo=FALSE}
 summary(dt$coef)
 ```
+
 ### **df**
+
 ```{r, echo=FALSE}
 summary(dt$df)
 ```
