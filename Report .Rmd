@@ -6,8 +6,9 @@ output:
     toc_float:
       collapsed: true
       smooth_scroll: false
-author: 'Gabriele Stella, Weida Pan, Karan Kashyap'
+author: 'Gabriele Stella, Weida Pan, {Karan Kashyap}'
 date:      June, 2022
+bibliography: Bibliography.bib
 ---
 
 ```{r, echo = F}
@@ -15,16 +16,26 @@ load('Data/Environment.Rdata')
 library(kableExtra)
 ```
 
+# introduction 
+Economic theory suggests that a binding minimum price policy, including a minimum wage, should lead to an imbalance characterized by excess supply and reduced demand. Previous empirical re- search has questioned how well this prediction holds true in the labor market, with many estimates suggesting that raising the minimum wage would have an impact on employment.
+
+The theory greatly simplifies the low-skilled labor market, generally assuming that all participants have the same skill level, resulting in equal job productivity. In fact, the minimum wage may be binding on the least skilled, least productive workers, but not more experienced workers in the same company. Determining the relevant markets to which employment reduction projections should ap- ply becomes challenging empirically, especially when the data do not allow direct observation of wages.
+
+We suppose that reproducing results obtained by other researchers is a crucial part of science, therefore, the main idea of our paper is taken in two parts. First, we aim to reproduce the results of a well-known meta-analysis conducted in the late 1990s by @card1995time. In their paper, the authors looked at 15 studies on the topic and reached multiple conclusions taking into account the quality of the studies cited. Obtained and aggregated results, such as coefficients and t-value which are not the main factor when it comes to meta-studies.
 
 # *Card and Krueger*'s Meta-Analysis 
-A Meta-Analysis, is directed to use the main results about the same argument and verify is the conclusion works also in aggregate, thanks to this analysis we can also test a series of publication bias. 
 
-In fact, in this works *card and Krueger* went to test what they called “*one of the best-known predictions of standard economic theory*”:  **The effect of the minimum wage on the employment.**
+A Meta-Analysis, is directed to use the main results about the same argument and verify is the conclusion works also in aggregate, in this type of research, authors typically look for various biases that can lead to erroneous conclusions that are later replicated by other scientists.
+
+In fact, in this works *card and Krueger* went to test what they called “*one of the best-known predictions of standard economic theory*”:  
+<p align="center">
+**The effect of the minimum wage on the employment.**
+</p>
 
 Since the 1970 economics’ literature argue about this effect and it’s well know that an increase in the minimum wage leads to increase the unemployment rate on the weakest part of the employment force (*teenage one*)
 This prediction says that an increase of a 10% in the federal minimum wage leads to a reduction between one and three percent in a teenage employment. 
 
-Despite that, * Card and Krueger* figure out that also if the past studies are now accepted and seen as credible, the prediction of this effect in a number of recent studies based on cross-sectional comparison have estimated negligible or even marginally positive employment effects.
+Despite that, *Card and Krueger* figure out that also if the past studies are now accepted and seen as credible, the prediction of this effect in a number of recent studies based on cross-sectional comparison have estimated negligible or even marginally positive employment effects.
 
 In their meta-analysis *Card and Krueger* grouped a group of fifteen studies since 1970 to 1992. 
 What they expected was to find, since the conclusions was always more or less the same, a positive correlation between the sample size of the studies and the t-ratio of their coefficient. 
@@ -33,11 +44,21 @@ Just about it, it’s important to say that recent studies has more observation 
 
 Their analysis builds on the hypothesis that the literature contains an unbiased sample of the coefficients and t-ratio due to the different on the sample size as argue before. 
 
-Otherwise, their findings was difficult to reconcile with their null hypothesis, so they explain that this result may be due to the tendency for statistically significant results to be overrepresented in the published literature, the author’s to see publication their studying could  (voluntarily or not) have been affected by publication bias and/or specification searching. 
+Otherwise, their findings was difficult to reconcile with their null hypothesis, so they explain that this result may be due to the tendency for statistically significant results to be over represented in the published literature, the author’s to see publication their studying could  (voluntarily or not) have been affected by publication bias and/or specification searching. 
+
+The authors chose the t-ratio on the minimum wage variable, in which the log scale was judged to be the preferred one. For studies that estimated only linear specifications, the authors chose t-ratios from the preferred linear specifications.
+
+Since the functional form is one of the factors at the researcher's discretion. Therefore, estimates can be combined based on different functional forms. However, the authors attempted to limit the sample to a subset of studies using log norms and came to similar conclusions.
+
+Besides, the authors estimate the similarity models of three research subsets. In the subsample before 1982, he found that there was a negative correlation between T ratio and degrees of freedom. In addition, the regression analysis of omitting outliers was carried out. When this study was excluded from the sample, the relationship between T ratio and degrees of freedom became significant. After all, he analyzed a subset of 11 studies using the logarithmic norm. In this result, there is a negative correlation between t ratio and degrees of freedom.
 
 # Our implementation
 
-Our task it’s to implement the *Card and Krueger*’s dataframe we searched and found three more studies: 
+Having replicated the results obtained by Card and Krueger, we aimed to further strengthen the analysis by adding additional papers, paying particular attention to these papers, which were published later than previous meta-analyses. 
+
+<p align="center">
+Our implementation are about three studies: 
+</p>
 
 * The Impact of the National Minimum Wage on Employment (2011)
     * *Jinlan Ni* , *Guangxin Wang* and *Xianguo Yao*
@@ -45,6 +66,8 @@ Our task it’s to implement the *Card and Krueger*’s dataframe we searched an
     *	*Aleksandra Majchrowska* and *Zbigniew Żółkiewski*
 * Impact of Minimum Wages on Employment (2015)
     * *Eewley et al.* 
+    
+The next section describes the process of reproducing the meta-analysis done by Card and Krueger. Later, we then conduct the analysis with three other papers and indicating our obtained results.
   
 ## Data Summarize {.tabset}
 
@@ -131,7 +154,8 @@ fig_2_old
 
 # 3 Implementation 
 
-Our assignment doesn't concern just the reproducing part, but now we want to implement the same study implemented with our data. 
+In our implementation, we need to control the potential impact of other research features on this dependence, so we use the logarithm of the absolute t ratio as the dependent variable for regression. Next, we select the independent variables, namely the logarithm of the square root of the degree of freedom, and the binary variables indicating whether the model specification in a given study is logarithm. This specification is similar to that used in the original meta-analysis, except that we did not find information about the adolescent subsample used in all papers.
+We usually see that the model fitted on the subset is similar to the model described in the original meta-analysis and has the same direction. In all specifications, with our research, the coefficient is close to zero. However, for all replication models and extended models, the coefficient of the key independent variable, that is, the logarithm of the square root of the degree of freedom, is negative and far from 1, which again indicates that there is a deviation in the selected paper. For unbiased analysis, the coefficient should be equal to 1, because the higher the degree of freedom, the higher the t statistic. Here, we observe the opposite relationship.
 
 ## 3_1 Relation of Estimated t-Ratio to Sample Size- Implemented
 
@@ -150,6 +174,10 @@ fig_2_new
 
   
 # 4 conclusion
+
+Our findings are consistent with the original meta-analysis by Card and Krueger (1995), who argue that these countrintuitive results are caused by the fact that, when the available data are not too large, the norms used by researchers make them were able to find a significant negative correlation between minimum wages and their expected youth employment. However, due to its fragility, the significance decreases as more data is used.
+
+Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. In conclusion, there is strong evidence that research is often biased. Lack of self- awareness and excessive trust in existing literature can be misleading.
 
 # reference
   
