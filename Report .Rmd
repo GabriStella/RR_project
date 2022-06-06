@@ -1,13 +1,15 @@
 ---
-title: 'Time Series Minimum Wage Studies Meta-Analysis - Report'
+title: "Time Series Minimum Wage Studies Meta-Analysis - Report"
+author: "Gabriele Stella, Weida Pan"
+date: "June, 2022"
 output:
   html_document:
-    toc: true
+    toc: yes
     toc_float:
-      collapsed: true
-      smooth_scroll: false
-author: 'Gabriele Stella, Weida Pan, {Karan Kashyap}'
-date:      June, 2022
+      collapsed: yes
+      smooth_scroll: no
+  pdf_document:
+    toc: yes
 bibliography: Bibliography.bib
 ---
 
@@ -16,7 +18,8 @@ load('Data/Environment.Rdata')
 library(kableExtra)
 ```
 
-# introduction 
+# Introduction 
+
 Economic theory suggests that a binding minimum price policy, including a minimum wage, should lead to an imbalance characterized by excess supply and reduced demand. Previous empirical re- search has questioned how well this prediction holds true in the labor market, with many estimates suggesting that raising the minimum wage would have an impact on employment.
 
 The theory greatly simplifies the low-skilled labor market, generally assuming that all participants have the same skill level, resulting in equal job productivity. In fact, the minimum wage may be binding on the least skilled, least productive workers, but not more experienced workers in the same company. Determining the relevant markets to which employment reduction projections should ap- ply becomes challenging empirically, especially when the data do not allow direct observation of wages.
@@ -119,10 +122,10 @@ Then we’re going to proceed with three more chapter, in each chapter you can s
 
 
 
-## variable
-as we can see they used a set of 15 studies and we went to implement with three studies most recent. 
+## Variable
+As we can see they used a set of 15 studies and we went to implement with three studies most recent. 
 
-the variable that they use was 12: 
+The variable that they use was 12: 
 
 - consists of the author(s), 
 - date of publication (year), 
@@ -141,53 +144,53 @@ the variable that they use was 12:
   
 
   
-# 2 Reproducing Part
+# Reproducing Part
 
-the authors implemented this study focusing on three cases: 
+The authors implemented this study focusing on three cases: 
 
-## 2_1 Relation of Estimated t-Ratio to Sample Size 
+## 1 Relation of Estimated t-Ratio to Sample Size 
 ```{r, echo = F, fig.width = 6, fig.height = 4}
 fig_1_old
 ```
 
-## 2_2 Descreptive Regression Models 
+## 2 Descreptive Regression Models 
 <img src="data/tbl 1.png"/>
 
 
-## 2_3 Relation of Estimated Employment to Standard Error
+## 3 Relation of Estimated Employment to Standard Error
 
 ```{r, echo = F}
 fig_2_old
 ```
 
-# 3 Implementation 
+# Implementation 
 
 In our implementation, we need to control the potential impact of other research features on this dependence, so we use the logarithm of the absolute t ratio as the dependent variable for regression. Next, we select the independent variables, namely the logarithm of the square root of the degree of freedom, and the binary variables indicating whether the model specification in a given study is logarithm. This specification is similar to that used in the original meta-analysis, except that we did not find information about the adolescent subsample used in all papers.
 We usually see that the model fitted on the subset is similar to the model described in the original meta-analysis and has the same direction. In all specifications, with our research, the coefficient is close to zero. However, for all replication models and extended models, the coefficient of the key independent variable, that is, the logarithm of the square root of the degree of freedom, is negative and far from 1, which again indicates that there is a deviation in the selected paper. For unbiased analysis, the coefficient should be equal to 1, because the higher the degree of freedom, the higher the t statistic. Here, we observe the opposite relationship.
 
-## 3_1 Relation of Estimated t-Ratio to Sample Size- Implemented
+## 1 Relation of Estimated t-Ratio to Sample Size- Implemented
 
 ```{r, echo = F, fig.width = 6, fig.height = 4}
 fig_1_new
 ```
 
-## 3_2 Descreptive Regression Models- Implemented
+## 2 Descreptive Regression Models- Implemented
 <img src="data/tbl 2.png"/>
 
-## 3_3 Relation of Estimated Employment to Standard Error- Implemented
+## 3 Relation of Estimated Employment to Standard Error- Implemented
 
 ```{r, echo = F, fig.width = 6, fig.height = 4}
 fig_2_new
 ```
 
   
-# 4 conclusion
+# Conclusion
 
 Our findings are consistent with the original meta-analysis by Card and Krueger (1995), who argue that these countrintuitive results are caused by the fact that, when the available data are not too large, the norms used by researchers make them were able to find a significant negative correlation between minimum wages and their expected youth employment. However, due to its fragility, the significance decreases as more data is used.
 
 Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. In conclusion, there is strong evidence that research is often biased. Lack of self- awareness and excessive trust in existing literature can be misleading.
 
-# reference
+# Reference
   
 
 

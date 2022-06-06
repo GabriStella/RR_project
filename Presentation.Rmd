@@ -4,7 +4,7 @@ output:
   beamer_presentation: 
     theme: Warsaw
     colortheme: lily
-author: Gabriele Stella, Weida Pan, Karan Kashyap
+author: Gabriele Stella, Weida Pan
 date:      June, 2022
 fontsize:  9 pt  
 ---
@@ -87,7 +87,7 @@ summary(dt$df)
 ```
 
 
-## procedure
+## Procedure
 
 - Now we're going to show our reproduction of the *Card and Krueger* study and then we'll compare their result with the same study implemented with our implementation. 
 
@@ -128,7 +128,7 @@ cat(tbl1, sep = '\n')
 cat(tbl2, sep = '\n')
 ```
 
-## is it t-statics always 2?
+## Is it t-statics always 2?
 
 - One sort of meta-analysis compares a coefficient's strength in each research to its estimated standard error. We employ estimates of the employment effect of a 10% increase in the minimum wage. This approach will provide a positive correlation across studies since the t ratio is defined by b/SE, where b is the estimated employment effect and SE is its standard error.
 
@@ -159,12 +159,12 @@ fig_2_new
 ```
 
 
-## conclusion
+## Conclusion
 Our findings are consistent with the original meta-analysis by Card and Krueger (1995), who argue that these countrintuitive results are caused by the fact that, when the available data are not too large, the norms used by researchers make them were able to find a significant negative correlation between minimum wages and their expected youth employment. However, due to its fragility, the significance decreases as more data is used. Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. 
 
 In conclusion, there is strong evidence that research is often biased. Lack of self-awareness and excessive trust in existing literature can be misleading. 
 
-## ended
+## Ended
 
 \centering  Thank You
 
