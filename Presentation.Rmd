@@ -14,8 +14,6 @@ fontsize:  9 pt
 load('Data/Environment.Rdata')
 ```
 
-
-
 ## Introduction
 
 - our project is based on the paper written by *David Card & Alan B. Krueger* in 1995 regarding research of the best-known predictions of standard economic theory that an increase in the minimum wage will lower employment of low-wage workers. Their result indicates that an increase of 10% in the minimum wage as a result a reduction between 1-3 % in teenage employment. 
@@ -35,7 +33,6 @@ load('Data/Environment.Rdata')
 
 - The aim then is to use approaches from statistics to derive a pooled estimate closest to the unknown common truth based on how this error is perceived. Meta-analytic results are considered the most trustworthy source of evidence by the evidence-based medicine literature
 
-
 ## Data (1/3) 
 
 - the professor give us the Data of the *Card and krueger's Meta-Ananlysis*, but in that table missing three variable: 
@@ -54,12 +51,11 @@ load('Data/Environment.Rdata')
 
 - The original study includes 15 observations of 14 variables by year 1992.
 
-
 ## Data (2/3)
 
 - our implementation concern:
 
-    - J*inlan Ni , Guangxin Wang & Xianguo Yao*, "Impact of Minimum Wages on Employment", **2011**
+    - *Jinlan Ni , Guangxin Wang & Xianguo Yao*, "Impact of Minimum Wages on Employment", **2011**
     
     - *Majchrowska and Zolkiew*, "The Impact of the National Minimum Wage on Employment", **2012**
     
@@ -130,10 +126,6 @@ cat(tbl2, sep = '\n')
 
 ## Is it t-statics always 2?
 
-- One sort of meta-analysis compares a coefficient's strength in each research to its estimated standard error. We employ estimates of the employment effect of a 10% increase in the minimum wage. This approach will provide a positive correlation across studies since the t ratio is defined by b/SE, where b is the estimated employment effect and SE is its standard error.
-
-## Histogram 
-
 ```{r, echo=FALSE}
 library(rcompanion)
 plotNormalHistogram( dt$t_stat, prob = FALSE, col="indianred",
@@ -158,7 +150,6 @@ fig_2_old
 fig_2_new
 ```
 
-
 ## Conclusion
 Our findings are consistent with the original meta-analysis by Card and Krueger (1995), who argue that these countrintuitive results are caused by the fact that, when the available data are not too large, the norms used by researchers make them were able to find a significant negative correlation between minimum wages and their expected youth employment. However, due to its fragility, the significance decreases as more data is used. Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. 
 
@@ -167,4 +158,3 @@ In conclusion, there is strong evidence that research is often biased. Lack of s
 ## Ended
 
 \centering  Thank You
-

@@ -17,11 +17,9 @@ load('Data/Environment.Rdata')
 library(kableExtra)
 ```
 
-# Introduction 
+Economic theory suggests that a binding minimum price policy, including a minimum wage, should lead to an imbalance characterized by excess supply and reduced demand. Previous empirical research has questioned how well this prediction holds true in the labor market, with many estimates suggesting that raising the minimum wage would have an impact on employment.
 
-Economic theory suggests that a binding minimum price policy, including a minimum wage, should lead to an imbalance characterized by excess supply and reduced demand. Previous empirical re- search has questioned how well this prediction holds true in the labor market, with many estimates suggesting that raising the minimum wage would have an impact on employment.
-
-The theory greatly simplifies the low-skilled labor market, generally assuming that all participants have the same skill level, resulting in equal job productivity. In fact, the minimum wage may be binding on the least skilled, least productive workers, but not more experienced workers in the same company. Determining the relevant markets to which employment reduction projections should ap- ply becomes challenging empirically, especially when the data do not allow direct observation of wages.
+The theory greatly simplifies the low-skilled labor market, generally assuming that all participants have the same skill level, resulting in equal job productivity. In fact, the minimum wage may be binding on the least skilled, least productive workers, but not more experienced workers in the same company. Determining the relevant markets to which employment reduction projections should apply becomes challenging empirically, especially when the data do not allow direct observation of wages.
 
 We suppose that reproducing results obtained by other researchers is a crucial part of science, therefore, the main idea of our paper is taken in two parts. First, we aim to reproduce the results of a well-known meta-analysis conducted in the late 1990s by @card1995time. In their paper, the authors looked at 15 studies on the topic and reached multiple conclusions taking into account the quality of the studies cited. Obtained and aggregated results, such as coefficients and t-value which are not the main factor when it comes to meta-studies.
 
@@ -35,13 +33,16 @@ In fact, in their paper, *card and krueger* tested what they called "one of the 
 **The impact of the minimum wage on the employment.**
 </p>
 
-Since the economic literature debated this effect in 1970, it is well known that an increase in the minimum wage will lead to an increase in the unemployment rate of the weakest part of the workforce (*teenagers*)
+The economic literature debated this effect since 1970, it is well known that an increase in the minimum wage will lead to an increase in the unemployment rate of the weakest part of the workforce (*teenagers*)
 
 This forecast indicates that a 10 per cent increase in the federal minimum wage will result in a 1 to 3 per cent reduction in youth employment.
 
-Nevertheless, *card and krueger* found that if past studies are now accepted and regarded as credible, the prediction of this impact in some recent studies based on cross-sectional
+Nevertheless, *Card and Krueger* found that if past studies are now accepted and regarded as credible, the prediction of this impact in some recent studies based on cross-sectional seemed to come to other conclusion. 
+These studies predicted a null immpacts or sometimes a bit positive. 
 
-In their meta-analysis, *card and krueger* grouped 15 studies from 1970 to 1992. It is expected to find, since the conclusions are always more or less the same, and there is a positive correlation between the sample size of the study and the T ratio of its coefficient. This is the case. 
+*Card and Krueger* thank to Meta-Analysis tool could test why the Time-Series studies kept to prove the reverse. 
+
+In their meta-analysis, *Card and Krueger* grouped 15 studies from 1970 to 1992. It is expected to find, since the conclusions are always more or less the same, and there is a positive correlation between the sample size of the study and the T ratio of its coefficient. This is the case. 
 
 It is important to say that recent studies have more observations than previous studies. This is also due to historical reasons.
 
@@ -191,4 +192,5 @@ Our findings are consistent with the original meta-analysis by Card and Krueger 
 
 Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. In conclusion, there is strong evidence that research is often biased. Lack of self- awareness and excessive trust in existing literature can be misleading.
 
-# Reference
+# References 
+
