@@ -121,30 +121,36 @@ model_3_new_sub3 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #3- graphs 
 
-fig_1_old = ggplot(dt[1:15, ], aes(x = sqrt_df, y = t_stat)) +
-  geom_point(aes(color = as.factor(implemented))) +
-  geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
+fig_1_old = ggplot(dt[1:15, ], aes(x = sqrt_df, y = t_stat, color= implemented)) +
+  geom_point() +
+  scale_color_manual(values = c("Yes" = "mediumblue",
+                                "No" = "coral3"))+
+  geom_text(aes(label = id_num), hjust = -0.2, vjust = -0.2) +
   geom_smooth(formula = y ~ x, method = 'lm', color = 'black') +
   labs(title = 'Figure 1. Relation of Estimated t-Ratio to Sample Size',
        x = 'Square Root of Degrees of Freedom',
        y = 't-statistics (absolute)') +
   theme_bw() + 
   theme(legend.position = 'none')
-
-fig_2_old = ggplot(dt[1:15, ], aes(x = error, y = coef)) +
-  geom_point(aes(color = as.factor(implemented))) +
-  geom_line(aes(y = 2 * error)) +
-  geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
+#---
+fig_2_old = ggplot(dt[1:15, ], aes(x = error, y = coef, color= implemented)) +
+  geom_point() +
+  scale_color_manual(values = c("Yes" = "mediumblue",
+                                "No" = "coral3"))+
+  geom_line(aes(y = 2 * error, color=blues9), colour = "cadetblue") +
+  geom_text(aes(label = id_num), hjust = -0.2, vjust = -0.2) +
   geom_smooth(formula = y ~ x, method = 'lm', color = 'black') +
   labs(title = 'Figure 2. Relation of Estimated Employment to Standard Error',
        x = 'Standard Error',
        y = 'Employment Elasticity (absolute)') +
   theme_bw() + 
   theme(legend.position = 'none')
-
-fig_1_new = ggplot(dt, aes(x = sqrt_df, y = t_stat)) +
-  geom_point(aes(color = as.factor(implemented))) +
-  geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
+#---
+fig_1_new = ggplot(dt, aes(x = sqrt_df, y = t_stat, color= implemented)) +
+  geom_point() +
+  scale_color_manual(values = c("Yes" = "mediumblue",
+                                "No" = "coral3"))+
+  geom_text(aes(label = id_num), hjust = -0.2, vjust = -0.2) +
   geom_smooth(formula = y ~ x, method = 'lm', color = 'black') +
   labs(title = 'Figure 1. Relation of Estimated t-Ratio to Sample Size',
        subtitle = 'Implemented studies are plotted in Blue.',
@@ -152,11 +158,13 @@ fig_1_new = ggplot(dt, aes(x = sqrt_df, y = t_stat)) +
        y = 't-statistics (absolute)') +
   theme_bw() + 
   theme(legend.position = 'none')
-
-fig_2_new = ggplot(dt, aes(x = error, y = coef)) +
-  geom_point(aes(color = as.factor(implemented))) +
-  geom_line(aes(y = 2 * error)) +
-  geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
+#---
+fig_2_new = ggplot(dt, aes(x = error, y = coef, color= implemented)) +
+  geom_point() +
+  scale_color_manual(values = c("Yes" = "mediumblue",
+                                "No" = "coral3"))+
+  geom_line(aes(y = 2 * error, color=blues9), colour = "cadetblue") +
+  geom_text(aes(label = id_num), hjust = -0.2, vjust = -0.2) +
   geom_smooth(formula = y ~ x, method = 'lm', color = 'black') +
   labs(title = 'Figure 2. Relation of Estimated Employment to Standard Error',
        subtitle = 'Implemented studies are plotted in Blue.',
