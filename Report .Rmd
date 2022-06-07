@@ -7,7 +7,6 @@ output:
     toc: yes
     toc_float:
       collapsed: yes
-      smooth_scroll: no
   pdf_document:
     toc: yes
 bibliography: Bibliography.bib
@@ -29,28 +28,29 @@ We suppose that reproducing results obtained by other researchers is a crucial p
 
 # *Card and Krueger*'s Meta-Analysis 
 
-A Meta-Analysis, is directed to use the main results about the same argument and verify is the conclusion works also in aggregate, in this type of research, authors typically look for various biases that can lead to erroneous conclusions that are later replicated by other scientists.
+Meta analysis aims to use the main results of the same argument to verify whether the conclusions are generally valid. In such studies, authors usually look for various biases that may lead to wrong conclusions, which are later performed by other scientists.
 
-In fact, in this works *card and Krueger* went to test what they called “*one of the best-known predictions of standard economic theory*”:  
+In fact, in their paper, *card and krueger* tested what they called "one of the most famous predictions in standard economic theory":  
 <p align="center">
-**The effect of the minimum wage on the employment.**
+**The impact of the minimum wage on the employment.**
 </p>
 
-Since the 1970 economics’ literature argue about this effect and it’s well know that an increase in the minimum wage leads to increase the unemployment rate on the weakest part of the employment force (*teenage one*)
-This prediction says that an increase of a 10% in the federal minimum wage leads to a reduction between one and three percent in a teenage employment. 
+Since the economic literature debated this effect in 1970, it is well known that an increase in the minimum wage will lead to an increase in the unemployment rate of the weakest part of the workforce (*teenagers*)
 
-Despite that, *Card and Krueger* figure out that also if the past studies are now accepted and seen as credible, the prediction of this effect in a number of recent studies based on cross-sectional comparison have estimated negligible or even marginally positive employment effects.
+This forecast indicates that a 10 per cent increase in the federal minimum wage will result in a 1 to 3 per cent reduction in youth employment.
 
-In their meta-analysis *Card and Krueger* grouped a group of fifteen studies since 1970 to 1992. 
-What they expected was to find, since the conclusions was always more or less the same, a positive correlation between the sample size of the studies and the t-ratio of their coefficient. 
+Nevertheless, *card and krueger* found that if past studies are now accepted and regarded as credible, the prediction of this impact in some recent studies based on cross-sectional
 
-Just about it, it’s important to say that recent studies has more observation than the previous one also because of historical reason. 
+In their meta-analysis, *card and krueger* grouped 15 studies from 1970 to 1992. It is expected to find, since the conclusions are always more or less the same, and there is a positive correlation between the sample size of the study and the T ratio of its coefficient. This is the case. 
 
-Their analysis builds on the hypothesis that the literature contains an unbiased sample of the coefficients and t-ratio due to the different on the sample size as argue before. 
+It is important to say that recent studies have more observations than previous studies. This is also due to historical reasons.
 
-Otherwise, their findings was difficult to reconcile with their null hypothesis, so they explain that this result may be due to the tendency for statistically significant results to be over represented in the published literature, the author’s to see publication their studying could  (voluntarily or not) have been affected by publication bias and/or specification searching. 
+Their analysis is based on the assumption that the literature contains unbiased samples of coefficients and t ratios, because the sample sizes are different as described above.
 
-The authors chose the t-ratio on the minimum wage variable, in which the log scale was judged to be the preferred one. For studies that estimated only linear specifications, the authors chose t-ratios from the preferred linear specifications.
+
+Otherwise, their findings was difficult to reconcile with their null hypothesis, so they explain that this result may be due to the tendency for statistically significant results to be over represented in the published literature, the author’s to see publication their studying could (voluntarily or not) have been affected by publication bias and/or specification searching.
+
+The authors chose the t-ratio on the minimum wage variable, in which the log scale was judged to be the preferred one. For studies that estimated only linear specifications, the authors chose t- ratios from the preferred linear specifications.
 
 Since the functional form is one of the factors at the researcher's discretion. Therefore, estimates can be combined based on different functional forms. However, the authors attempted to limit the sample to a subset of studies using log norms and came to similar conclusions.
 
@@ -81,7 +81,7 @@ The next section describes the process of reproducing the meta-analysis done by 
 ```{r, echo = F}
 
 kable(head(dt, 15), booktabs = TRUE) %>%
-  kable_styling(font_size = 11)
+  kable_styling(font_size = 8)
 
 ```
 
@@ -98,7 +98,7 @@ Then we’re going to proceed with three more chapter, in each chapter you can s
 ```{r, echo = F}
 
 kable(head(dt [16:18, 1:14],), booktabs = TRUE) %>%
-  kable_styling(font_size = 11)
+  kable_styling(font_size = 8)
 
 ```
 
@@ -112,7 +112,7 @@ Then we’re going to proceed with three more chapter, in each chapter you can s
 
 ```{r, echo = F}
 kable(head(dt, 18), booktabs = TRUE) %>%
-  kable_styling(font_size = 11)
+  kable_styling(font_size = 8)
 
 ```
 
@@ -120,7 +120,7 @@ kable(head(dt, 18), booktabs = TRUE) %>%
 In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
 Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
 
-
+###{-}
 
 ## Variable
 As we can see they used a set of 15 studies and we went to implement with three studies most recent. 
@@ -166,6 +166,7 @@ fig_2_old
 # Implementation 
 
 In our implementation, we need to control the potential impact of other research features on this dependence, so we use the logarithm of the absolute t ratio as the dependent variable for regression. Next, we select the independent variables, namely the logarithm of the square root of the degree of freedom, and the binary variables indicating whether the model specification in a given study is logarithm. This specification is similar to that used in the original meta-analysis, except that we did not find information about the adolescent subsample used in all papers.
+
 We usually see that the model fitted on the subset is similar to the model described in the original meta-analysis and has the same direction. In all specifications, with our research, the coefficient is close to zero. However, for all replication models and extended models, the coefficient of the key independent variable, that is, the logarithm of the square root of the degree of freedom, is negative and far from 1, which again indicates that there is a deviation in the selected paper. For unbiased analysis, the coefficient should be equal to 1, because the higher the degree of freedom, the higher the t statistic. Here, we observe the opposite relationship.
 
 ## 1 Relation of Estimated t-Ratio to Sample Size- Implemented
@@ -191,14 +192,3 @@ Our findings are consistent with the original meta-analysis by Card and Krueger 
 Our supplementary paper confirms that this trend in research bias is critical and still exists, with lower t-ratios for papers published after the 15 papers studied by Card and Kruger, even with larger data samples. In conclusion, there is strong evidence that research is often biased. Lack of self- awareness and excessive trust in existing literature can be misleading.
 
 # Reference
-  
-
-
-
-  
-
-
-
-
-
-
